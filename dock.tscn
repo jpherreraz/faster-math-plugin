@@ -1,0 +1,333 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2g7r8xm3jhvl"]
+
+[ext_resource type="Script" path="res://addons/Faster Math/dock.gd" id="1_0h8xv"]
+
+[node name="Faster Math" type="VBoxContainer"]
+offset_right = 350.0
+offset_bottom = 700.0
+script = ExtResource("1_0h8xv")
+
+
+[node name="MainTabs" type="TabContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Browse" type="VBoxContainer" parent="MainTabs"]
+layout_mode = 2
+
+[node name="BrowseControls" type="HBoxContainer" parent="MainTabs/Browse"]
+layout_mode = 2
+
+[node name="RefreshButton" type="Button" parent="MainTabs/Browse/BrowseControls"]
+layout_mode = 2
+text = "Refresh"
+
+[node name="AddTrackButton" type="Button" parent="MainTabs/Browse/BrowseControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add New Track"
+
+[node name="BrowseTree" type="Tree" parent="MainTabs/Browse"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 1
+column_titles_visible = false
+select_mode = 1
+
+[node name="QuestionDetails" type="VBoxContainer" parent="MainTabs/Browse"]
+layout_mode = 2
+
+
+[node name="QuestionActions" type="HBoxContainer" parent="MainTabs/Browse/QuestionDetails"]
+layout_mode = 2
+
+[node name="EditQuestionButton" type="Button" parent="MainTabs/Browse/QuestionDetails/QuestionActions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Edit"
+disabled = true
+
+[node name="DeleteButton" type="Button" parent="MainTabs/Browse/QuestionDetails/QuestionActions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Delete"
+disabled = true
+
+[node name="Questions" type="VBoxContainer" parent="MainTabs"]
+layout_mode = 2
+
+[node name="TrackSelection" type="VBoxContainer" parent="MainTabs/Questions"]
+layout_mode = 2
+
+[node name="TrackLabel" type="Label" parent="MainTabs/Questions/TrackSelection"]
+layout_mode = 2
+text = "Select Track:"
+
+[node name="TrackOption" type="OptionButton" parent="MainTabs/Questions/TrackSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator1" type="HSeparator" parent="MainTabs/Questions"]
+layout_mode = 2
+
+[node name="NewQuestionEditor" type="VBoxContainer" parent="MainTabs/Questions"]
+layout_mode = 2
+
+[node name="NewQuestionLabel" type="Label" parent="MainTabs/Questions/NewQuestionEditor"]
+layout_mode = 2
+text = "Add New Question:"
+
+[node name="NewQuestionContainer" type="HBoxContainer" parent="MainTabs/Questions/NewQuestionEditor"]
+layout_mode = 2
+
+[node name="NewOp1Input" type="LineEdit" parent="MainTabs/Questions/NewQuestionEditor/NewQuestionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "First number"
+
+[node name="NewOperatorOption" type="OptionButton" parent="MainTabs/Questions/NewQuestionEditor/NewQuestionContainer"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "+"
+popup/item_0/id = 0
+popup/item_1/text = "-"
+popup/item_1/id = 1
+popup/item_2/text = "×"
+popup/item_2/id = 2
+popup/item_3/text = "÷"
+popup/item_3/id = 3
+
+[node name="NewOp2Input" type="LineEdit" parent="MainTabs/Questions/NewQuestionEditor/NewQuestionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Second number"
+
+[node name="EqualsLabel" type="Label" parent="MainTabs/Questions/NewQuestionEditor/NewQuestionContainer"]
+layout_mode = 2
+text = " = "
+
+[node name="NewResultInput" type="LineEdit" parent="MainTabs/Questions/NewQuestionEditor/NewQuestionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Answer"
+
+[node name="AddButton" type="Button" parent="MainTabs/Questions/NewQuestionEditor/NewQuestionContainer"]
+layout_mode = 2
+text = "Add"
+
+[node name="HSeparator2" type="HSeparator" parent="MainTabs/Questions"]
+layout_mode = 2
+
+[node name="QuestionsList" type="ScrollContainer" parent="MainTabs/Questions"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QuestionsContainer" type="VBoxContainer" parent="MainTabs/Questions/QuestionsList"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grades" type="VBoxContainer" parent="MainTabs"]
+layout_mode = 2
+
+[node name="GradesHeader" type="HBoxContainer" parent="MainTabs/Grades"]
+layout_mode = 2
+
+[node name="CreateGradeButton" type="Button" parent="MainTabs/Grades/GradesHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create Grade"
+
+[node name="GradesList" type="ItemList" parent="MainTabs/Grades"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GradeEditor" type="VBoxContainer" parent="MainTabs/Grades"]
+layout_mode = 2
+
+[node name="GradeForm" type="GridContainer" parent="MainTabs/Grades/GradeEditor"]
+layout_mode = 2
+columns = 2
+
+[node name="GradeNameLabel" type="Label" parent="MainTabs/Grades/GradeEditor/GradeForm"]
+layout_mode = 2
+text = "Grade Name:"
+
+[node name="GradeNameInput" type="LineEdit" parent="MainTabs/Grades/GradeEditor/GradeForm"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g., Grade 6, Pre-Algebra"
+
+[node name="GradeKeyLabel" type="Label" parent="MainTabs/Grades/GradeEditor/GradeForm"]
+layout_mode = 2
+text = "Grade Key:"
+
+[node name="GradeKeyInput" type="LineEdit" parent="MainTabs/Grades/GradeEditor/GradeForm"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g., grade-6"
+
+[node name="GradeActions" type="HBoxContainer" parent="MainTabs/Grades/GradeEditor"]
+layout_mode = 2
+
+[node name="SaveGradeButton" type="Button" parent="MainTabs/Grades/GradeEditor/GradeActions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save Grade"
+
+[node name="DeleteGradeButton" type="Button" parent="MainTabs/Grades/GradeEditor/GradeActions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Delete Grade"
+modulate = Color(1, 0.7, 0.7, 1)
+
+[node name="Tracks" type="VBoxContainer" parent="MainTabs"]
+layout_mode = 2
+
+[node name="Help" type="ScrollContainer" parent="MainTabs"]
+layout_mode = 2
+
+[node name="HelpContent" type="VBoxContainer" parent="MainTabs/Help"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TracksHeader" type="HBoxContainer" parent="MainTabs/Tracks"]
+layout_mode = 2
+
+[node name="CreateTrackButton" type="Button" parent="MainTabs/Tracks/TracksHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create Track"
+
+[node name="TracksList" type="ItemList" parent="MainTabs/Tracks"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TrackEditor" type="VBoxContainer" parent="MainTabs/Tracks"]
+layout_mode = 2
+
+[node name="TrackForm" type="GridContainer" parent="MainTabs/Tracks/TrackEditor"]
+layout_mode = 2
+columns = 2
+
+[node name="TrackNumberLabel" type="Label" parent="MainTabs/Tracks/TrackEditor/TrackForm"]
+layout_mode = 2
+text = "Track Number:"
+
+[node name="TrackNumberInput" type="SpinBox" parent="MainTabs/Tracks/TrackEditor/TrackForm"]
+layout_mode = 2
+min_value = 1.0
+max_value = 99.0
+step = 1.0
+value = 13.0
+
+[node name="TrackTitleLabel" type="Label" parent="MainTabs/Tracks/TrackEditor/TrackForm"]
+layout_mode = 2
+text = "Track Title:"
+
+[node name="TrackTitleInput" type="LineEdit" parent="MainTabs/Tracks/TrackEditor/TrackForm"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g., Advanced Multiplication"
+
+[node name="TrackGradeLabel" type="Label" parent="MainTabs/Tracks/TrackEditor/TrackForm"]
+layout_mode = 2
+text = "Grade Level:"
+
+[node name="TrackGradeOption" type="OptionButton" parent="MainTabs/Tracks/TrackEditor/TrackForm"]
+layout_mode = 2
+
+[node name="TrackActions" type="HBoxContainer" parent="MainTabs/Tracks/TrackEditor"]
+layout_mode = 2
+
+[node name="SaveTrackButton" type="Button" parent="MainTabs/Tracks/TrackEditor/TrackActions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save Track"
+
+[node name="DeleteTrackButton" type="Button" parent="MainTabs/Tracks/TrackEditor/TrackActions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Delete Track"
+modulate = Color(1, 0.7, 0.7, 1)
+
+
+[node name="NewTrackDialog" type="AcceptDialog" parent="."]
+title = "Create New Track"
+size = Vector2i(400, 200)
+
+[node name="TrackDialogContainer" type="VBoxContainer" parent="NewTrackDialog"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -40.0
+
+[node name="DialogForm" type="GridContainer" parent="NewTrackDialog/TrackDialogContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="DialogNumberLabel" type="Label" parent="NewTrackDialog/TrackDialogContainer/DialogForm"]
+layout_mode = 2
+text = "Track Number:"
+
+[node name="DialogNumberInput" type="SpinBox" parent="NewTrackDialog/TrackDialogContainer/DialogForm"]
+layout_mode = 2
+min_value = 1.0
+max_value = 99.0
+step = 1.0
+value = 13.0
+
+[node name="DialogTitleLabel" type="Label" parent="NewTrackDialog/TrackDialogContainer/DialogForm"]
+layout_mode = 2
+text = "Track Title:"
+
+[node name="DialogTitleInput" type="LineEdit" parent="NewTrackDialog/TrackDialogContainer/DialogForm"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g., Advanced Division"
+
+[node name="DialogGradeLabel" type="Label" parent="NewTrackDialog/TrackDialogContainer/DialogForm"]
+layout_mode = 2
+text = "Grade Level:"
+
+[node name="DialogGradeOption" type="OptionButton" parent="NewTrackDialog/TrackDialogContainer/DialogForm"]
+layout_mode = 2
+
+[node name="NewGradeDialog" type="AcceptDialog" parent="."]
+title = "Create New Grade"
+size = Vector2i(400, 150)
+
+[node name="GradeDialogContainer" type="VBoxContainer" parent="NewGradeDialog"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -40.0
+
+[node name="GradeDialogForm" type="GridContainer" parent="NewGradeDialog/GradeDialogContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GradeDialogNameLabel" type="Label" parent="NewGradeDialog/GradeDialogContainer/GradeDialogForm"]
+layout_mode = 2
+text = "Grade Name:"
+
+[node name="GradeDialogNameInput" type="LineEdit" parent="NewGradeDialog/GradeDialogContainer/GradeDialogForm"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g., Grade 6"
+
+[node name="GradeDialogKeyLabel" type="Label" parent="NewGradeDialog/GradeDialogContainer/GradeDialogForm"]
+layout_mode = 2
+text = "Grade Key:"
+
+[node name="GradeDialogKeyInput" type="LineEdit" parent="NewGradeDialog/GradeDialogContainer/GradeDialogForm"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g., grade-6"
+
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="."]
